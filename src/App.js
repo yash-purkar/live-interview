@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react'
+import { Profile } from './Components/Profile/Profile'
+// name title articles followers and ratings
+export const App = () => {
+  const userDetails = [{
+    name: "John",
+    title: "Frontend Developer",
+    articles: 25,
+    followers: 101,
+    ratings: 7
+  },
+  {
+    name: "Jack",
+    title: "Frontend Developer",
+    articles: 25,
+    followers: 101,
+    ratings: 7
+  },
+  {
+    name: "Rocky",
+    title: "Frontend Developer",
+    articles: 25,
+    followers: 101,
+    ratings: 7
+  },]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {
+        userDetails?.map(user => <Profile user={user} />)
+      }
     </div>
-  );
+  )
 }
-
-export default App;
